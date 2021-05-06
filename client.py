@@ -1,7 +1,6 @@
-from server import receive
 import socket, threading, tkinter
 import tkinter.scrolledtext
-from tkinter import Message, simpledialog
+from tkinter import simpledialog
 
 HOST = '192.168.0.110'
 PORT = 12000
@@ -41,11 +40,11 @@ class Client:
         self.msg_label.config(font=("Helvetica", 12))
         self.msg_label.pack(padx=20,pady=5)
 
-        self.input_area = tkinter.text(self.win,height=3)
+        self.input_area = tkinter.Text(self.win,height=3)
         self.input_area.pack(padx=20,pady=5)
 
         self.send_button = tkinter.Button(self.win,text="Send", command=self.write)
-        self.send_button.config("Helvetica", 12)
+        self.send_button.config(font=("Helvetica", 12))
         self.send_button.pack(padx=20,pady=5)
 
         self.gui_done = True
