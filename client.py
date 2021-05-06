@@ -19,8 +19,8 @@ class Client:
         self.gui_done = False
         self.running = True
 
-        gui_thread = threading.Thread(target=gui_loop)
-        receive_thread = threading.Thread(target=receive)
+        gui_thread = threading.Thread(target=self.gui_loop)
+        receive_thread = threading.Thread(target=self.receive)
 
         gui_thread.start()
         receive_thread.start()
